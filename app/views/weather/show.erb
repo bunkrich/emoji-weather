@@ -7,22 +7,11 @@
   <h1 id="8"></h1>
   <h4 id="1"></h4>
 
-	<!-- <h3>Weather</h3>
-	<h3>Description</h3>
-	<p id="3"></p>
-	<h3>Humidity</h3>
-	<p id="4"></p>
-	<h3>Wind Speed</h3>
-	<p id="5"></p>
-	<h3>City</h3>
-	<h3>Clouds</h3>
-	<p id="7"></p> -->
-
-	<script>
+<script>
   var weather_call = "<%= @weather_call %>";
-		weather = $.getJSON(weather_call).done(function (res) {
-			$('#output').html(res);
-			res = weather.responseJSON
+	weather = $.getJSON(weather_call).done(function (res) {
+	$('#output').html(res);
+	res = weather.responseJSON
     var temp = res.main.temp
     var temp_max = res.main.temp_max - 1
     var temp_min = res.main.temp_min + 1
@@ -57,7 +46,7 @@
     else if (temp > 250) {t = "🌡⚠️💀"}
     else {t = "🌡🆘💀"}
 
-		document.getElementById("1").innerHTML = t + temp_change;
+	document.getElementById("1").innerHTML = t + temp_change;
 
     var id = res.weather[0].id
 
